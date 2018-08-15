@@ -58,20 +58,24 @@ public class WidgetTest {
             test.log(LogStatus.INFO,"Section 3 text not displayed");
         }
 
-        if(accordionPage.checkHidden()){
+        if(accordionPage.checkHidden(driver)){
             test.log(LogStatus.INFO,"Section 1 hidden");
         }else{
             test.log(LogStatus.INFO, "Section 1 not hidden");
         }
 
-        if(accordionPage.checkText() && accordionPage.checkHidden()){
+        if(accordionPage.checkText() && accordionPage.checkHidden(driver)){
             test.log(LogStatus.PASS,"Test Passed");
         }else{
             test.log(LogStatus.FAIL,"Test Failed");
         }
 
+        HelperMethods.screenshot(driver);
+        test.log(LogStatus.INFO, "Screenshot taken");
 
-        assertTrue(accordionPage.checkHidden() && accordionPage.checkText());
+
+
+        assertTrue(accordionPage.checkHidden(driver) && accordionPage.checkText());
 
 
 
