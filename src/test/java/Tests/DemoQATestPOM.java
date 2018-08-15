@@ -1,7 +1,11 @@
+package Tests;
+
+import Pages.DemoAddUser;
+import Pages.DemoLogin;
+import Pages.DemoSiteHome;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -30,13 +34,13 @@ public class DemoQATestPOM {
 
         //Add User
         DemoAddUser addUserPage = PageFactory.initElements(driver,DemoAddUser.class);
-        addUserPage.enterText("test");
+        addUserPage.enterText("test","test");
         addUserPage.clickSave();
         addUserPage.changePageLogin();
 
         //Log in
         DemoLogin loginPage = PageFactory.initElements(driver, DemoLogin.class);
-        loginPage.loginProcess("test");
+        loginPage.loginProcess("test","test");
         loginPage.clickLogin();
         assertTrue(loginPage.checkLoginText());
 

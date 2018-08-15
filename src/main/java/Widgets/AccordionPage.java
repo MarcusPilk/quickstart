@@ -1,13 +1,9 @@
 package Widgets;
 
-import org.openqa.selenium.By;
+import Pages.Constantss;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.function.Function;
 
 public class AccordionPage {
 
@@ -44,8 +40,7 @@ public class AccordionPage {
     }
 
     public Boolean checkHidden(WebDriver driver){
-        WebDriverWait wait = new WebDriverWait(driver, 3);
-        wait.until((Function<WebDriver, Object>) driver1 -> !(driver1.findElement(By.id("ui-id-5")).isDisplayed()));
+        Constantss.waitUntilHidden(driver,section1Div,3);
         if(section1Div.getAttribute("aria-hidden").equals("true")){
             return true;
         }else{

@@ -1,3 +1,5 @@
+package Pages;
+
 public class BlackJack {
 
     public int play(int player1, int player2) {

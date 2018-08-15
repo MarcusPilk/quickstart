@@ -1,4 +1,6 @@
-import org.junit.Before;
+package Tests;
+
+import Pages.BlackJack;
 import org.junit.BeforeClass;
 import org.junit.Test;
 

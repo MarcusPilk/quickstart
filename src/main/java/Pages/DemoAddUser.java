@@ -1,3 +1,5 @@
+package Pages;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -15,12 +17,13 @@ public class DemoAddUser {
     @FindBy (xpath = "/html/body/div/center/table/tbody/tr[2]/td/div/center/table/tbody/tr/td[2]/p/small/a[4]")
     WebElement loginLink;
 
-    public void enterText(String text){
+    public void enterText(String user,String pass){
         usernameText.click();
-        usernameText.sendKeys(text);
+        usernameText.sendKeys(user);
         passwordText.click();
-        passwordText.sendKeys(text);
+        passwordText.sendKeys(pass);
     }
+
 
     public void clickSave(){
         saveButton.click();

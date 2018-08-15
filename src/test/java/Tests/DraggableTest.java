@@ -1,3 +1,6 @@
+package Tests;
+
+import Pages.DraggablePage;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
@@ -5,8 +8,6 @@ import org.junit.*;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.Pause;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.concurrent.TimeUnit;

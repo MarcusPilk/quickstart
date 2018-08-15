@@ -1,12 +1,14 @@
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+package Tests;
+
+import org.openqa.selenium.*;
 import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.function.Function;
 
 public class HelperMethods {
 
@@ -30,6 +32,11 @@ public class HelperMethods {
                 e.printStackTrace();
             }
 
+        }
+
+        public static void waitUntilHidden(WebDriver driver, WebElement element, int waitTime){
+            WebDriverWait wait = new WebDriverWait(driver, waitTime);
+            wait.until((Function<WebDriver, Object>) driver1 -> !(driver1.findElement(By.id(element.getAttribute("id"))).isDisplayed()));
         }
 
 
